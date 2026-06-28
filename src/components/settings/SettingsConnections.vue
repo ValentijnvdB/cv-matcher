@@ -58,7 +58,7 @@
             placeholder="http://localhost:11434"
           />
           <p class="text-xs text-gray-400 mt-1">
-            The address of your local Ollama instance.
+            The address of your Ollama instance.
           </p>
         </div>
         <div>
