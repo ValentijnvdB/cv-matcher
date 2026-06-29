@@ -177,6 +177,11 @@ function applyVacancy() {
   }
 }
 
+async function clearAllRequirements() {
+  vacancyStore.requirements = []
+  await vacancyStore.persist()
+}
+
 async function confirmApply() {
   showConfirm.value = false
 
@@ -192,6 +197,10 @@ async function confirmApply() {
       fileName: '',
     })
   }
+
+  await clearAllRequirements()
+
+  emit('pressedApplied')
 
   // Navigation to requirements tab is handled via the 'applied' emit below
   const success = await vacancyStore.extractRequirements()

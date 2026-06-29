@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col">
-    <VacancyInput class="flex-1 min-h-0" @applied="onApplied" />
+    <VacancyInput class="flex-1 min-h-0" @pressedApplied="onApplied" />
   </div>
 </template>
 
