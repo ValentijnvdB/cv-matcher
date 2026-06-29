@@ -33,7 +33,7 @@
             autocomplete="off"
           />
           <p class="text-xs text-gray-400 mt-1">
-            Stored only in your browser's localStorage and never sent to any server other than OpenAI.
+            Stored only in your browser's localStorage and never sent to any server other than OpenAI. We are open source: https://github.com/ValentijnvdB/cv-matcher
           </p>
         </div>
         <div>
@@ -87,7 +87,7 @@
             autocomplete="off"
           />
           <p class="text-xs text-gray-400 mt-1">
-            Stored only in your browser's localStorage and never sent to any server other than Anthropic.
+            Stored only in your browser's localStorage and never sent to any server other than Anthropic. We are open source: https://github.com/ValentijnvdB/cv-matcher
           </p>
         </div>
         <div>

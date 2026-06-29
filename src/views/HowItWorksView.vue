@@ -9,9 +9,21 @@
         </div>
         <div>
           <h3 class="text-sm font-semibold text-gray-900 mb-1">{{ step.title }}</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">{{ step.description }}</p>
+          <p class="text-sm text-gray-600 leading-relaxed">
+            <template v-for="(part, i) in step.description" :key="i">
+              <kbd v-if="typeof part === 'object'" class="inline-flex items-center rounded border border-primary-200 bg-primary-50 px-1.5 py-0.5 text-xs font-mono text-primary-700">{{ part.path }}</kbd>
+              <template v-else>{{ part }}</template>
+            </template>
+          </p>
         </div>
       </div>
+    </div>
+
+    <!-- Settings tip -->
+    <div class="rounded-lg border border-primary-200 bg-primary-50 p-4">
+      <p class="text-sm text-primary-800 leading-relaxed">
+        <strong>Recommended:</strong> Play around with the thresholds and multipliers on <kbd class="inline-flex items-center rounded border border-primary-200 bg-white px-1.5 py-0.5 text-xs font-mono text-primary-700">Settings → General</kbd> to find a configuration you're happy with.
+      </p>
     </div>
 
     <!-- Categories legend -->
@@ -52,37 +64,37 @@ const steps = [
   {
     number: 1,
     title: 'Configure your LLM provider',
-    description: 'Go to the Settings -> Connections and select your provider, fill in your API key and test the connection.',
+    description: ['Go to ', { path: 'Settings → Connections' }, ' and select your provider, fill in your API key and test the connection.'],
   },
   {
     number: 2,
     title: 'Upload the vacancy',
-    description: 'Go to the Vacancy tab and paste the job description as text, or upload it as a PDF, image, or text file.',
+    description: ['Go to the ', { path: 'Vacancy' }, ' tab and paste the job description as text, or upload it as a PDF, image, or text file.'],
   },
   {
     number: 3,
     title: 'Extract requirements',
-    description: 'Click "Apply" to send the vacancy to the AI. It will return a list of requirements for your ideal candidate. You can review these, adjust priorities (must have / should have / nice to have), and edit or delete individual items under the Requirements tab.',
+    description: ['Click "Apply" to send the vacancy to the AI. It will return a list of requirements for your ideal candidate. You can review these, adjust priorities (must have / should have / nice to have), and edit or delete individual items under the ', { path: 'Requirements' }, ' tab.'],
   },
   {
     number: 4,
     title: 'Upload CVs',
-    description: 'Go to the CVs tab and upload one or more candidate CVs (PDF, image, or text). You can add as many as you need.',
+    description: ['Go to the ', { path: 'CVs' }, ' tab and upload one or more candidate CVs (PDF, image, or text). You can add as many as you need.'],
   },
   {
     number: 5,
     title: 'Analyze',
-    description: 'Click "Analyze" on a CV, or "Analyze all" to process them one by one. The AI checks each CV against every requirement and assigns a score per item.',
+    description: ['Click "Analyze" on a CV, or "Analyze all" to process them one by one. The AI checks each CV against every requirement and assigns a score per item.'],
   },
   {
     number: 6,
     title: 'Review the results',
-    description: 'Each CV is placed in a match category based on the weighted total score. You can click any CV to see exactly which requirements were found, partially found, or missing. Expand a requirement to see the AIs reasoning for assigning a score.',
+    description: ['Each CV is placed in a match category based on the weighted total score. You can click any CV to see exactly which requirements were found, partially found, or missing. Expand a requirement to see the AI\'s reasoning for assigning a score.'],
   },
   {
     number: 7,
     title: 'Export & share',
-    description: 'Use the export button (top right) to save the full session as a JSON file. You or a colleague can import this file to continue where you left off.',
+    description: ['Use the export button (top right) to save the full session as a JSON file. You or a colleague can import this file to continue where you left off.'],
   },
 ]
 

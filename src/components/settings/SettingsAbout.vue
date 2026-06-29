@@ -21,10 +21,6 @@
         This tool helps recruiters make faster and more consistent pre-selections by automatically matching candidate CVs against vacancy requirements using a large language model.
       </p>
 
-      <p class="text-sm text-gray-600 leading-relaxed">
-        Source code: https://github.com/ValentijnvdB/cv-matcher
-      </p>
-
       <div class="border-t border-gray-100 pt-4 space-y-2">
         <div class="flex items-center justify-between text-xs">
           <span class="text-gray-500">How data is stored</span>
@@ -41,6 +37,10 @@
         <div class="flex items-center justify-between text-xs">
           <span class="text-gray-500">No backend or tracking</span>
           <span class="text-gray-700 font-medium">✓</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-gray-500">Source code</span>
+          <span class="text-gray-700 font-medium">https://github.com/ValentijnvdB/cv-matcher</span>
         </div>
       </div>
 
